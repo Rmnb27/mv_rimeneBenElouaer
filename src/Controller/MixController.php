@@ -55,6 +55,7 @@ class MixController extends AbstractController
         }
         
         $entityManager->flush();
-        dd($mix);
+        return $this->redirectToRoute('app_mix_show', [
+            'id' => $mix->getId(),]);
     }
 }
